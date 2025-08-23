@@ -10,21 +10,22 @@ def YOLO11(images_path):
     model = YOLO("yolo11s.pt")
 
     for image_file in images_path:
-        result = model.track(
-            image_file, conf=0.5, persist=True, tracker="bytetrack.yaml"
-        )[0]
+        results = model.track(image_file, conf=0.5, persist=True)
 
-        if result.boxes and result.boxes.is_track:
+        if len(results) > 0:
+            result = results[0]
 
-            # Visualize the result on the frame
-            annotated_frame = result.plot(conf=False)
+            if result.boxes and result.boxes.is_track:
 
-        # Display the annotated frame
-        cv.imshow("YOLO11 Tracking", annotated_frame)
+                # Visualize the result on the frame
+                annotated_frame = result.plot(conf=False)
 
-        # Break the loop if 'q' is pressed
-        if cv.waitKey(1) & 0xFF == ord("q"):
-            break
+            # Display the annotated frame
+            cv.imshow("YOLO11 Tracking", annotated_frame)
+
+            # Break the loop if 'q' is pressed
+            if cv.waitKey(1) & 0xFF == ord("q"):
+                break
 
     # Clean up OpenCV windows
     cv.destroyAllWindows()
@@ -42,7 +43,6 @@ def simpleSortAlgorithm(images_path):
 
         output_image, _ = tracker.inference(image)
 
-        # show tracking at 15 FPS
         new_image = cv.cvtColor(output_image, cv.COLOR_RGB2BGR)
         cv.imshow("Object Tracking", new_image)
 
