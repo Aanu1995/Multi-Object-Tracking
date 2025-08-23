@@ -11,6 +11,16 @@ This project demonstrates two different approaches to object tracking:
 
 The system is designed to track multiple objects across video frames while maintaining consistent object identities, making it suitable for applications like surveillance, traffic monitoring, and sports analytics.
 
+## 🎬 Demo Results
+
+### Custom SORT Algorithm Implementation
+
+![SORT Tracking Demo](output/sort_tracking.gif)
+
+### YOLO 11 Built-in Tracking
+
+![YOLO 11 Tracking Demo](output/yolo11_tracking.gif)
+
 ## 🔧 Features
 
 - **Custom SORT Implementation**: Complete implementation of the SORT algorithm with Hungarian algorithm for data association
