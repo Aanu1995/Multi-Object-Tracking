@@ -15,11 +15,11 @@ The system is designed to track multiple objects across video frames while maint
 
 ### Custom SORT Algorithm Implementation
 
-![SORT Tracking Demo](output/sort_tracking_short.gif)
+![SORT Tracking Demo](output/sort_tracking.gif)
 
 ### YOLO 11 Built-in Tracking
 
-![YOLO 11 Tracking Demo](output/yolo11_tracking_short.gif)
+![YOLO 11 Tracking Demo](output/yolo11_tracking.gif)
 
 ## 🔧 Features
 
