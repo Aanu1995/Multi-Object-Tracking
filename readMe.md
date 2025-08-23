@@ -103,30 +103,3 @@ C_shape = exp(-w2 × shape_difference)
 ```
 
 Exponential decay functions for distance and shape similarity.
-
-## 🎨 Visualization
-
-The tracking system provides visual feedback with:
-
-- **Colored Bounding Boxes**: Each track gets a unique color based on its ID
-- **Track IDs**: Numerical labels displayed above each bounding box
-- **Real-time Display**: Live visualization at 15 FPS equivalent
-
-## ⚙️ Configuration
-
-### Tracking Parameters (in `RealTimeObjectTracker`)
-
-```python
-MIN_HIT_STREAK = 1          # Frames before showing track
-MAX_UNMATCHED_AGE = 2       # Frames before deleting track
-conf = 0.5                  # Detection confidence
-iou = 0.4                   # NMS IoU threshold
-```
-
-### Cost Function Thresholds (in `total_cost`)
-
-```python
-iou_thresh = 0.3           # Minimum IoU for matching
-linear_thresh = 10000      # Minimum Sanchez-Matilla score
-exp_thresh = 0.5           # Minimum Yu metric score
-```
